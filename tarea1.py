@@ -120,30 +120,95 @@ print(len(palabra))
 '''
 12-Escribe un programa que solicite al usuario su fecha de nacimiento en formato
 dd/mm/aaaa y luego imprima su edad en años.
-Utiliza la función .split()
+Utiliza la función .split() 
+'''
+import datetime 
+
+print("ingrese su fecha de nacimiento dd/mm/aaaa")
+fecha_nac = input()
+dia, mes, anio = map(int, fecha_nac.split('/'))
+
+fecha_act = datetime.date.today()
+anio_hoy = fecha_act.year
+mes_hoy = fecha_act.month
+dia_hoy = fecha_act.day
+
+edad = anio_hoy - anio
+
+if(mes > mes_hoy):
+    edad = edad -1
+    print('tu edad actual es de '+ str(edad)+' años')
+elif((mes==mes_hoy) and (dia==dia_hoy)):
+    print("feliz cumple numero", edad, "años")
+elif((mes==mes_hoy) and (dia > dia_hoy)):
+    print("feliz cumple numero", edad," años, atrasado")
+elif((mes==mes_hoy) and (dia < dia_hoy)):
+    print("falta poco para tu cumple numero", edad)
+
+
+'''
+13-Escribe un programa que solicite al usuario su nombre y su edad, y luego
+imprima un mensaje que indique cuántos años tendrá el usuario en 10 años más.'''
+
+nombre=str(input('como se llama '))
+edad=int(input(f'Hola {nombre} ingrese su edad: '))
+print(f'{nombre}, en 10 años tendras {edad + 10}')
+
+
+'''
+14-Escribe un programa que solicite al usuario un número entero y luego
+imprima el doble y el triple de ese número.'''
+
+numero_entero = int(input('Ingrese un numero entero: '))
+print(f' El doble  de {numero_entero} es: {numero_entero * 2} y el triple es: {numero_entero* 3 }')
+
+
+'''
+15-Escribe un programa que solicite al usuario una temperatura en grados
+Celsius y luego imprima la temperatura equivalente en grados Fahrenheit.
+La fórmula para convertir de Celsius a Fahrenheit es: F = (C * 1.8) + 32.'''
+
+temperatura = float(input('introducir temperatura en grados celsius: '))
+print(f' la temperatura en grados Fahrenheit es: {temperatura*1.8 +32}')
+
+'''16-Escribe un programa que solicite al usuario su peso y su altura, y luego calcule
+e imprima su índice de masa corporal (IMC).
+La fórmula para calcular el IMC es: IMC = peso / (altura ** 2).
+'''
+peso = float(input('introduzca su peso:'))
+altura = float(input('introduzca su altura:'))
+print(f' su imc es de: {round(peso/(altura**2))}')
+
+'''17-Escribe un programa que solicite al usuario dos palabras y luego las imprima
+en orden inverso.
+Por ejemplo, si el usuario ingresa "hola" y "mundo", el programa debe imprimir
+"mundo hola".
+Importante!!! Utiliza un solo print() 😈.
+'''
+palabras = input('introducir 2 palabras: ')
+palabras_invertidas= palabras.split(" ")
+print(" ".join(reversed(palabras_invertidas)))
+
+
+'''
+18-Crea un programa que pida al usuario su nombre, su edad y su ciudad de
+residencia, y lo muestre en pantalla Utilizando una sola línea de código.
+*Recuerda el print() del ejercicio anterior 🤫
 '''
 
+nombre = input('introducir su nombre: ')
+edad = int(input('introducir su edad: '))
+ciudad_residencia= input('introducir su ciudad de residencia: ')
+print(f'su nombre es: {nombre}, su edad es: {edad}  y su ciudad de residencia es: {ciudad_residencia}.')
+
+'''
+19-Escribe un programa que solicite al usuario un número decimal y luego
+imprima la parte entera y decimal por separado.'''
+
+numero =input('introduzca un numero decimal: ')
+entero_decimal = numero.split(".")
+print(f' numero entero: {entero_decimal[0]} y el numero decimal: {entero_decimal[1]} ')
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+''' Fin'''
